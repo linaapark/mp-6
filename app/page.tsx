@@ -1,5 +1,7 @@
 'use client'
 
+import { signIn } from "next-auth/react"
+
 export default function Home() {
     return (
         <main className="min-h-screen flex flex-col items-center bg-gradient-to-b from-purple-50 to-purple-100 p-6">
@@ -11,12 +13,12 @@ export default function Home() {
                     Sign in with your preferred provider
                 </p>
 
-                <a
-                    href="/api/auth/login"
+                <button
+                    onClick={() => signIn("github")}
                     className="block w-full bg-purple-500 text-white py-2 rounded-md hover:bg-purple-600"
                 >
                     Sign in with GitHub
-                </a>
+                </button>
             </div>
         </main>
     )
